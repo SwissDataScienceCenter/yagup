@@ -8,7 +8,7 @@ import sys
 from setuptools import find_packages, setup
 
 
-PACKAGE = "giturl"
+PACKAGE = "yagup"
 
 
 if sys.argv[-1] == "publish":
@@ -63,14 +63,11 @@ class Setup(object):
     def meta(cls, key):
         data = cls.read(os.path.join(PACKAGE, "__init__.py"))
         version = (
-            re.search(
-                u"__{}__\s*=\s*u?('|\")([^'\"]+)('|\")".format(key), data
-            )
+            re.search(u"__{}__\s*=\s*u?('|\")([^'\"]+)('|\")".format(key), data)
             .group(2)
             .strip()
         )
         return version
-
 
     @classmethod
     def author(cls):
@@ -79,7 +76,6 @@ class Setup(object):
     @classmethod
     def email(cls):
         return cls.meta("email")
-
 
     @classmethod
     def version(cls):
@@ -127,7 +123,7 @@ setup(
     install_requires=Setup.requirements("requirements.txt"),
     long_description=Setup.longdesc(),
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/divio/incubator/giturl",
+    url="https://github.com/SwissDataScienceCenter/yagup",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",

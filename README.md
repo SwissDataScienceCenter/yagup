@@ -1,18 +1,10 @@
-# git-url
-
-Parsing git urls.
+# yagup - Yet another git url parser
 
 ## Usage
 
 Its very simple to use it:
 
 ```
-from giturl import GitURL
-GitURL.parse("ssh://github.com/divio/somerepository)
+from yagup import GitURL
+GitURL.parse("ssh://github.com/foo/bar.git)
 ```
-
-
-
-## Todo
-
-* Include support for passwords

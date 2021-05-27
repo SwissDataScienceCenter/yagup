@@ -1,0 +1,4 @@
+include LICENSE requirements.txt 
+recursive-include yagup *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

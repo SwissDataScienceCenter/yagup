@@ -4,10 +4,10 @@ from pyparsing import ParseException
 from .exceptions import InvalidURL
 from .schema import URL
 
-__author__ = 'Divio AG'
-__email__ = 'dennis.schwertel@divio.ch'
-__version__ = '0.1.3'
-__url__ = 'https://www.divio.com'
+__author__ = "Swiss Data Science Center"
+__email__ = "contact@datascience.ch"
+__version__ = "0.1.0"
+__url__ = "https://datascience.ch/"
 
 
 @attr.s(frozen=True)
@@ -33,9 +33,8 @@ class GitURL:
         return GitURL(**res, parsing_result=res)
 
 
-
 def parse(url):
     """
-    Handy alias to 
+    Handy alias to
     """
     return GitURL.parse(url)
