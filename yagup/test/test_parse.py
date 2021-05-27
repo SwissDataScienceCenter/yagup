@@ -1,6 +1,6 @@
 import pytest
 
-from giturl import GitURL, InvalidURL
+from yagup import GitURL, InvalidURL
 
 
 TESTDATA_GITURL_VALID = [
@@ -34,17 +34,13 @@ TESTDATA_GITURL_VALID = [
     (
         "http://github.com/kinkerl/glowing-octo-succotash.git",
         GitURL(
-            scheme="http",
-            host="github.com",
-            path="kinkerl/glowing-octo-succotash.git",
+            scheme="http", host="github.com", path="kinkerl/glowing-octo-succotash.git",
         ),
     ),
     (
         "git://github.com/kinkerl/glowing-octo-succotash.git",
         GitURL(
-            scheme="git",
-            host="github.com",
-            path="kinkerl/glowing-octo-succotash.git",
+            scheme="git", host="github.com", path="kinkerl/glowing-octo-succotash.git",
         ),
     ),
     (
@@ -58,9 +54,7 @@ TESTDATA_GITURL_VALID = [
     (
         "ssh://github.com/kinkerl/glowing-octo-succotash.git",
         GitURL(
-            scheme="ssh",
-            host="github.com",
-            path="kinkerl/glowing-octo-succotash.git",
+            scheme="ssh", host="github.com", path="kinkerl/glowing-octo-succotash.git",
         ),
     ),
     (
@@ -107,6 +101,7 @@ TESTDATA_GITURL_VALID = [
             path="vxsx/animated-octo-doodle.git",
         ),
     ),
+    ("file:///tmp/test.git", GitURL(scheme="file", path="/tmp/test.git",),),
 ]
 TESTDATA_GITURL_INVALID = [
     # Invalid scheme

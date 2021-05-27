@@ -37,9 +37,7 @@ HOST = (
     .setParseAction(pyparsing_common.downcaseTokens)
     .setResultsName("host")
 )
-PORT = (
-    Word(nums).setParseAction(lambda toks: int(toks[0])).setResultsName("port")
-)
+PORT = Word(nums).setParseAction(lambda toks: int(toks[0])).setResultsName("port")
 USER = Word(alphanums, alphanums + "_-").setResultsName("user")
 PATH = Word(alphanums + "+,/._-~").setResultsName("path")
 
@@ -77,5 +75,7 @@ GIT_URL = (
     + PATH
 )
 URL = (
-    LineStart() + (HTTP_URL | SSH_URL | GIT_URL | SCP_LIKE_SSH_URL) + LineEnd()
+    LineStart()
+    + (HTTP_URL | SSH_URL | GIT_URL | SCP_LIKE_SSH_URL | LOCAL_URL)
+    + LineEnd()
 )
