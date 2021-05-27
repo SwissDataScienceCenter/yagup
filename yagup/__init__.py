@@ -6,7 +6,7 @@ from .schema import URL
 
 __author__ = "Swiss Data Science Center"
 __email__ = "contact@datascience.ch"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __url__ = "https://datascience.ch/"
 
 
